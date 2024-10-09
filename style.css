@@ -1,0 +1,207 @@
+/* General Body Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #0a192f; /* Dark blue background */
+  color: #ccccff;
+}
+
+/* Navigation Bar */
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: #0a192f;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+nav a {
+  color: #00d9ff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #64ffda;
+}
+
+/* Section Styling */
+.section {
+  min-height: 100vh; /* Full viewport height for each section */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  position: relative; /* Ensures the light area stays relative to the section */
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 800px;
+  width: 50%;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* List Styling for Bullet Points */
+ul {
+  list-style-type: disc; /* Default bullet style */
+  margin-left: 40px; /* Indent from the left to give space for bullets */
+  text-align: left; /* Align text to the left */
+}
+
+ul li {
+  line-height: 1.8; /* Space between lines for readability */
+  font-size: 18px; /* Adjust the size of the bullet text */
+}
+
+/* Light effect */
+.light-area {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none; /* Prevents interfering with form inputs */
+  transition: opacity 0.3s ease;
+  z-index: 999; /* Ensure it's always on top */
+}
+.contact-info {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.icon {
+  width: 40px; /* Adjust size as needed */
+  margin: 0 15px;
+  transition: transform 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+}
+
+#contact-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00d9ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: #64ffda; /* Change on hover */
+}
+
+/* Welcome Text with Animations */
+.welcome-text {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #64ffda;
+  animation: fadeInSlideUp 2s ease-out forwards, scaleUp 2s 2s ease-out forwards;
+  opacity: 0; /* Hidden initially, will be animated */
+}
+
+/* Fade-in, Slide-up Animation */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+/* Subtle Scale-up Animation */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1); /* Normal size */
+  }
+  100% {
+    transform: scale(1.1); /* Slightly larger */
+  }
+}
+
+.profile-pic {
+  width: 300px; /* Adjust the size as needed */
+  height: 300px;
+  border-radius: 30%; /* Makes the image circular */
+  margin-right: 20px; /* Space between the image and text */
+  vertical-align: middle; /* Aligns with the text */
+}
+
+/* Welcome content to align text and image */
+.welcome-content {
+  display: flex;
+  align-items: center; /* Align image and text vertically */
+  justify-content: center; /* Center the content horizontally */
+}
+
+/* Light effect */
+.light-area {
+  position: fixed; /* Fixed, so it stays in the same position in the viewport */
+  width: 200px; /* Size of the light area */
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none; /* Make sure the area doesn't interfere with clicking */
+  transition: opacity 0.3s ease-out, transform 0.1s ease; /* Smooth movement and fade out */
+  opacity: 0; /* Start hidden */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the light area at the mouse position */
+  z-index: 1000; /* Ensure the light is on top of everything */
+}
+
+/* Make the light follow the cursor */
+body {
+  position: relative;
+}
+
+body:hover .light-area {
+  opacity: 0.5; /* Adjust this for how visible the light should be */
+}
